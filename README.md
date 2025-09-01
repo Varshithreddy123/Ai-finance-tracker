@@ -1,70 +1,169 @@
-# Getting Started with Create React App
+# AI Finance Tracker with JWT Authentication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based finance tracking application with comprehensive JWT authentication system.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### 🔐 Authentication System
+- **JWT Token-based Authentication**
+- **User Registration & Login**
+- **Password Reset (Forgot Password)**
+- **User Profile Management**
+- **Protected Routes**
+- **Automatic Token Validation**
 
-### `npm start`
+### 🎨 UI Components
+- **Responsive Design** with custom CSS utility classes
+- **Modern Sidebar** with navigation
+- **User Profile Display**
+- **Form Validation** with error handling
+- **Loading States** and success messages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🚀 Technical Features
+- **React Context API** for state management
+- **Custom Hook** (`useAuth`) for authentication
+- **Mock API** for demonstration
+- **Local Storage** for token persistence
+- **Responsive Design** for mobile and desktop
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+```bash
+# Clone the repository
+git clone <repository-url>
+cd finance-ai-tracker
 
-### `npm run build`
+# Install dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start the development server
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Demo Credentials
+For testing purposes, you can use these demo credentials:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Login:**
+- Email: `john@example.com`
+- Password: `password123`
 
-### `npm run eject`
+**Or create a new account** using the registration form.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Authentication Flow
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. User Registration
+- Navigate to the registration form
+- Fill in required fields (First Name, Last Name, Email, Password)
+- Password confirmation validation
+- Success message and redirect to login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. User Login
+- Enter email and password
+- JWT token generation and storage
+- Automatic redirect to main application
+- Token validation on app start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Password Reset
+- Click "Forgot your password?" on login form
+- Enter email address
+- Mock email sending (check console for demo)
+- Password reset functionality
 
-## Learn More
+### 4. User Profile
+- View and edit profile information
+- Update personal details
+- Real-time form validation
+- Success/error message handling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 5. Logout
+- Click logout button in header or sidebar
+- Token removal from local storage
+- Redirect to login form
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
+```
+src/
+├── components/
+│   ├── auth/
+│   │   ├── Auth.jsx          # Main auth component
+│   │   ├── Login.jsx         # Login form
+│   │   ├── Register.jsx      # Registration form
+│   │   ├── ForgotPassword.jsx # Password reset
+│   │   └── UserProfile.jsx   # User profile management
+│   └── ui/
+│       └── button.jsx        # Custom button component
+├── contexts/
+│   └── AuthContext.js        # Authentication context
+├── _components/
+│   ├── Header.js             # App header with user info
+│   ├── Sidebar.jsx           # Navigation sidebar
+│   ├── Hero.jsx              # Landing page hero
+│   └── Footer.js             # App footer
+├── mockApi.js                # Mock API for demonstration
+├── App.js                    # Main application component
+└── index.js                  # Application entry point
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## API Endpoints
 
-### Analyzing the Bundle Size
+The application uses mock API endpoints that simulate real backend functionality:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User authentication
+- `POST /api/auth/forgot-password` - Password reset request
+- `POST /api/auth/reset-password` - Password reset
+- `GET /api/auth/validate` - Token validation
+- `PUT /api/auth/profile` - Profile update
 
-### Making a Progressive Web App
+## Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Styling
+- All styles use custom CSS utility classes
+- Color scheme defined in `src/index.css`
+- Responsive breakpoints for mobile and desktop
+- Gradient backgrounds and modern UI elements
 
-### Advanced Configuration
+### Authentication
+- JWT token structure can be modified in `mockApi.js`
+- Token expiration time (currently 24 hours)
+- User data structure in the mock database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Security Features
 
-### Deployment
+- **JWT Token Validation** on every app start
+- **Automatic Logout** on token expiration
+- **Protected Routes** for authenticated users only
+- **Form Validation** for all user inputs
+- **Error Handling** for failed API calls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Future Enhancements
 
-### `npm run build` fails to minify
+- [ ] Real backend integration
+- [ ] OAuth providers (Google, GitHub, etc.)
+- [ ] Two-factor authentication
+- [ ] Email verification
+- [ ] Role-based access control
+- [ ] Session management
+- [ ] API rate limiting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For questions or support, please open an issue in the repository.

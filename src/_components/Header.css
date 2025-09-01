@@ -1,0 +1,393 @@
+/* ================= Header ================= */
+header {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ================= Logo ================= */
+a[href="#"] {
+  display: block;
+  color: #0d9488;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+  border: 2px solid transparent;
+}
+
+a[href="#"]:hover {
+  color: #0f766e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.3);
+  border-color: #0d9488;
+}
+
+a[href="#"] img {
+  height: 2rem;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ================= Mobile Menu Button ================= */
+button[aria-label="Toggle sidebar"] {
+  display: block;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  padding: 0.625rem;
+  color: #475569;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button[aria-label="Toggle sidebar"]:hover {
+  color: #1e293b;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #94a3b8;
+}
+
+button[aria-label="Toggle sidebar"] svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ================= Navigation ================= */
+nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  nav {
+    display: block;
+  }
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  position: relative;
+}
+
+/* Dashboard Link */
+nav a.dashboard {
+  color: #2563eb;
+}
+
+nav a.dashboard:hover {
+  color: #1d4ed8;
+  border-bottom-color: #2563eb;
+}
+
+/* Transactions Link */
+nav a.transactions {
+  color: #059669;
+}
+
+nav a.transactions:hover {
+  color: #047857;
+  border-bottom-color: #059669;
+}
+
+/* Goals Link */
+nav a.goals {
+  color: #7c3aed;
+}
+
+nav a.goals:hover {
+  color: #6d28d9;
+  border-bottom-color: #7c3aed;
+}
+
+/* Analytics Link */
+nav a.analytics {
+  color: #ea580c;
+}
+
+nav a.analytics:hover {
+  color: #c2410c;
+  border-bottom-color: #ea580c;
+}
+
+/* Hover underline effect */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= User Profile Button ================= */
+button[aria-label="User menu"] {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button[aria-label="User menu"]:hover {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+/* ================= User Info Text ================= */
+.text-left p:first-child {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.text-left p:last-child {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4b5563;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* ================= Dropdown Arrow ================= */
+button[aria-label="User menu"] svg {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+  transition: transform 0.2s ease-in-out;
+}
+
+button[aria-label="User menu"] svg.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* ================= Dropdown Menu ================= */
+.relative > div:last-child {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 18rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 0.75rem 0;
+  z-index: 50;
+  animation: dropdownSlideIn 0.2s ease-out;
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= User Info Header ================= */
+.bg-gradient-to-r.from-teal-50.to-gray-50 {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  background: linear-gradient(to right, #f0fdfa, #f9fafb);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* ================= Menu Items ================= */
+.py-2 {
+  padding: 0.5rem 0;
+}
+
+/* Menu item styling */
+.py-2 > a,
+.py-2 > button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  width: calc(100% - 1rem);
+}
+
+.py-2 > a:hover,
+.py-2 > button:hover {
+  background-color: #f0fdfa;
+  color: #0f766e;
+}
+
+/* Menu item icons */
+.py-2 > a > div:first-child,
+.py-2 > button > div:first-child {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Icon background colors */
+.bg-teal-100 {
+  background-color: #ccfbf1;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.bg-green-100 {
+  background-color: #dcfce7;
+}
+
+/* Hover effects for icons */
+.py-2 > a:hover .bg-teal-100,
+.py-2 > button:hover .bg-teal-100 {
+  background-color: #99f6e4;
+}
+
+.py-2 > a:hover .bg-gray-100,
+.py-2 > button:hover .bg-gray-100 {
+  background-color: #e5e7eb;
+}
+
+.py-2 > a:hover .bg-green-100,
+.py-2 > button:hover .bg-green-100 {
+  background-color: #bbf7d0;
+}
+
+/* Icon colors */
+.bg-teal-100 svg {
+  color: #0d9488;
+}
+
+.bg-gray-100 svg {
+  color: #4b5563;
+}
+
+.bg-green-100 svg {
+  color: #16a34a;
+}
+
+/* ================= Logout Section ================= */
+.bg-gradient-to-r.from-red-50.to-red-100 {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f3f4f6;
+  background: linear-gradient(to right, #fef2f2, #fef2f2);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Logout button styling */
+.bg-gradient-to-r.from-red-50.to-red-100 button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #dc2626;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.bg-gradient-to-r.from-red-50.to-red-100 button:hover {
+  background-color: #fee2e2;
+}
+
+/* Logout icon */
+.bg-gradient-to-r.from-red-50.to-red-100 button > div:first-child {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fee2e2;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bg-gradient-to-r.from-red-50.to-red-100 button:hover > div:first-child {
+  background-color: #fecaca;
+}
+
+.bg-gradient-to-r.from-red-50.to-red-100 button > div:first-child svg {
+  width: 1rem;
+  height: 1rem;
+  color: #dc2626;
+}
+
+/* ================= Responsive Design ================= */
+@media (max-width: 768px) {
+  .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  nav {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .mx-auto {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mx-auto {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

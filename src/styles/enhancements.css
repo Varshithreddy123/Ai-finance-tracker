@@ -1,0 +1,113 @@
+/* Global UI enhancements: cards, buttons, tables, transitions */
+
+/* Card hover lift and glass effect */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.06);
+  backdrop-filter: saturate(140%) blur(2px);
+}
+
+.card:hover {
+  box-shadow: 0 18px 30px rgba(2, 6, 23, 0.08);
+  transform: translateY(-2px);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+/* Section title accents */
+.section-title {
+  font-weight: 700;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Buttons: subtle press, elevated hover */
+.btn {
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease, border-color 140ms ease;
+  will-change: transform;
+}
+
+.btn:hover {
+  box-shadow: 0 8px 18px rgba(2, 6, 23, 0.07);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 6px rgba(2, 6, 23, 0.12) inset;
+}
+
+/* Button color variants */
+.btn-emerald {
+  background-color: #059669;
+  color: white;
+  border: 1px solid #059669;
+}
+.btn-emerald:hover { background-color: #047857; border-color: #047857; }
+
+.btn-soft {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid rgba(16,185,129,0.25);
+}
+.btn-soft:hover { background-color: #d1fae5; }
+
+.btn-outline-emerald {
+  background: white;
+  color: #065f46;
+  border: 1px solid rgba(6,95,70,0.25);
+}
+.btn-outline-emerald:hover { background: #ecfdf5; border-color: rgba(6,95,70,0.4); }
+
+/* Inputs */
+.input-soft {
+  border: 1px solid rgba(148,163,184,0.6);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+.input-soft:focus {
+  border-color: rgba(16,185,129,0.7);
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.15);
+  outline: none;
+}
+
+/* Table styling */
+.table-ui {
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+.table-ui thead tr {
+  background: #ecfdf5;
+  color: #065f46;
+}
+.table-ui th, .table-ui td {
+  padding: 10px 12px;
+}
+.table-ui tbody tr:hover {
+  background: rgba(241,245,249,0.6);
+}
+.table-striped tbody tr:nth-child(odd) {
+  background: rgba(248,250,252,0.7);
+}
+
+/* Badges */
+.badge-soft {
+  background: #f0fdfa;
+  color: #065f46;
+  border: 1px solid rgba(16,185,129,0.25);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Utility for pressed state on click (JS optional) */
+.click-anim {
+  transition: transform 120ms ease, filter 160ms ease;
+}
+.click-anim:active {
+  transform: scale(0.98);
+  filter: saturate(1.05);
+}
